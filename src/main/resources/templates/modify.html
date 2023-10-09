@@ -9,18 +9,22 @@
     <form th:method = "PATCH" th:action = "@{/{id} (id = ${user.getId()})}" th:object="${user}">
         <label for = "firstName"> Modify or correct firstname: </label>
         <input type = "text" th:field = "*{firstName}" id = "firstName">
+        <div style="color:crimson" th:errors="*{firstName}" th:if="${#fields.hasErrors('firstName')}">Error</div>
         <br/>
 
         <label for = "lastName"> Modify or correct lastname: </label>
         <input type = "text" th:field = "*{lastName}" id = "lastName">
+        <div style="color:crimson" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Error</div>
         <br/>
 
         <label for = "gender"> Correct gender: </label>
         <input type = "text" th:field = "*{gender}" id = "gender">
+        <div style="color:crimson" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}">Error</div>
         <br/>
 
         <label for = "nationality"> Correct nationality: </label>
         <input type = "text" th:field = "*{nationality}" id = "nationality">
+        <div style="color:crimson" th:if="${#fields.hasErrors('nationality')}" th:errors="*{nationality}">Error</div>
         <br/>
 
         <input type = "submit" value = "Modify or correct user's data"/>

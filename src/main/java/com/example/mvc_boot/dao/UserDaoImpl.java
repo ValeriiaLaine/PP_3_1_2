@@ -1,4 +1,4 @@
-package com.example.mvc_boot.DAO;
+package com.example.mvc_boot.dao;
 
 import com.example.mvc_boot.model.User;
 import org.springframework.stereotype.Repository;

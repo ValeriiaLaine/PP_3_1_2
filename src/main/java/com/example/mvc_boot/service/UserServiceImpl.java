@@ -1,6 +1,6 @@
 package com.example.mvc_boot.service;
 
-import com.example.mvc_boot.DAO.UserDAO;
+import com.example.mvc_boot.dao.UserDAO;
 import com.example.mvc_boot.model.User;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

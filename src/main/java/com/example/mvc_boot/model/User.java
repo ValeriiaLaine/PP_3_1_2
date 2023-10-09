@@ -1,25 +1,36 @@
 package com.example.mvc_boot.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+import org.springframework.validation.annotation.Validated;
 
 
 @Entity
 @Table(name = "users")
+@Validated
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "firstName")
+    @NotEmpty
+    @Size(min = 2, max = 20, message = "Firstname should be in range of 2 and 20 symbols")
     private String firstName;
 
     @Column(name = "lastName")
+    @NotEmpty
+    @Size(min = 1, max = 25, message = "Secondname should be in range of 1 and 25 symbols")
     private String lastName;
 
     @Column(name = "gender")
+    @NotEmpty
     private String gender;
 
     @Column(name = "nationality")
+    @NotEmpty
+    @Size(min = 3, max = 20, message = "Nationality should be in range of 3 and 20 symbols")
     private String nationality;
 
 
